@@ -1,0 +1,37 @@
+[
+    {
+        "varenummer": 1,
+        "navn": "Skjerm",
+        "kategori": "Elektronikk",
+        "antall": 10,
+        "pris": 1999.0
+    },
+    {
+        "varenummer": 2,
+        "navn": "Penn",
+        "kategori": "Kontor",
+        "antall": 100,
+        "pris": 9.5
+    },
+    {
+        "varenummer": 3,
+        "navn": "tastatur ",
+        "kategori": "teknologi",
+        "antall": 10,
+        "pris": 100.0
+    },
+    {
+        "varenummer": 4,
+        "navn": "Mus",
+        "kategori": "Elektronikk",
+        "antall": 15,
+        "pris": 250.0
+    },
+    {
+        "varenummer": 5,
+        "navn": "Orginal FrogShot Copy",
+        "kategori": "Games",
+        "antall": 10,
+        "pris": 10000.0
+    }
+]
