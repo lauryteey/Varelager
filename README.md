@@ -19,7 +19,8 @@ Installer Python.
 📍 Her kan du laste ned den nyeste versjon av Python [Python's offisiell nettside](https://www.python.org/downloads/)
 
 
-Last ned filene (lagersystem.py og evt. tom varer.json)
+Clone den repository og sjekk at du har alle nødvendige filer ````app.py```` og ````vare.json````)
+Programmet er ikke knyttet til en database eller en server, så den kjører bare lokal på maskinen. 
 
 Kjør programmet i terminalen:
 
