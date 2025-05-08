@@ -138,7 +138,7 @@ def OppdaterVarer():
         printMeny()
 
     except ValueError:
-        print(" Ugyldig input. Du må skrive et tall din lille pung.")
+        print(" Ugyldig input. Du må skrive et tall.")
 
     printMeny()
     
