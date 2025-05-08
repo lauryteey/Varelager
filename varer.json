@@ -47,5 +47,19 @@
         "kategori": "Brus",
         "antall": 48,
         "pris": 18.49
+    },
+    {
+        "varenummer": 8,
+        "navn": "sandiwch",
+        "kategori": "mat",
+        "antall": 20,
+        "pris": 10.5
+    },
+    {
+        "varenummer": 9,
+        "navn": "stole ",
+        "kategori": "m\u00f8bler",
+        "antall": 20,
+        "pris": 10.2
     }
 ]

@@ -15,9 +15,15 @@ def write_data(data):
     with open(FILENAME, "w", encoding="utf-8") as f:
         return json.dump(data, f, indent= 4)
     
+#Funksjon for å clear terminalen etter å bruke en funksjon 
+def clearScreen():
+    os.system("cls" if os.name == "nt" else "clear")
+
+    
 #Funksjon for å printe menyen og funksjoner til menyen 
 
 def printMeny():
+    clearScreen()
     print("------------------- Din varerlager -------------------")
     print("| 1. Registrer nye varer                              |")
     print("| 2. Vise antall varer på din lager                   |")
@@ -78,6 +84,7 @@ def registrerVarer():
     data.append(ny_vare)
     write_data(data)
     print("✅ Varen er registrert. YAY!")
+    input("\nTrykk Enter for å fortsette...")
     printMeny()
     
 def antallVarer():
@@ -85,6 +92,7 @@ def antallVarer():
     print("Antall varer på lager:")
     for vare in data:
         print(f"- {vare['navn']}: {vare['antall']} stk")
+    input("\nTrykk Enter for å fortsette...")
         
 def søkVarer():
     data = last_data()
@@ -103,6 +111,7 @@ def søkVarer():
 
     if not funnet:
         print("Fant ingen vare som matcher søket.")
+    input("\nTrykk Enter for å fortsette...")
 
     printMeny()
     
@@ -125,6 +134,8 @@ def OppdaterVarer():
             print("Varenummer ikke funnet. WOMP WOMP")
 
         write_data(data)
+        input("\nTrykk Enter for å fortsette...")
+        printMeny()
 
     except ValueError:
         print(" Ugyldig input. Du må skrive et tall din lille pung.")
@@ -138,6 +149,7 @@ def lagerStatus():
         print(f"#{vare['varenummer']}: {vare['navn']} ({vare['kategori']})")
         print(f"   Antall: {vare['antall']} stk | Pris: {vare['pris']} kr")
     print("--------------------")
+    input("\nTrykk Enter for å fortsette...")
     printMeny()
 
 
