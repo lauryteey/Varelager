@@ -24,7 +24,7 @@
         "varenummer": 4,
         "navn": "Mus",
         "kategori": "Elektronikk",
-        "antall": 15,
+        "antall": 18,
         "pris": 250.0
     },
     {
@@ -33,5 +33,19 @@
         "kategori": "Games",
         "antall": 10,
         "pris": 10000.0
+    },
+    {
+        "varenummer": 6,
+        "navn": "blyant ",
+        "kategori": "forbruksmateriall",
+        "antall": 23,
+        "pris": 10.0
+    },
+    {
+        "varenummer": 7,
+        "navn": "Monster Pipeline Punch",
+        "kategori": "Brus",
+        "antall": 48,
+        "pris": 18.49
     }
 ]

@@ -115,7 +115,7 @@ def OppdaterVarer():
         for vare in data:
             if vare["varenummer"] == varenummer:
                 print(f"Varen du vil oppdatere er: {vare['navn']}")
-                endring = int(input("Hvor mange vil du legge til (Skriv (+ 'nummer' ) for å legge til eller fjerne (- 'nummer' ) for å fjerne? "))
+                endring = int(input("Hvor mange vil du legge til (Skriv (+ 'nummer' ) for å legge til eller fjerne (- 'nummer' ) for å fjerne1? "))
                 vare["antall"] += endring
                 print(f" Nytt antall: {vare['antall']} stk")
                 funnet = True
