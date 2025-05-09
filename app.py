@@ -87,7 +87,7 @@ def registrerVarer():
             if 0 <= antall <= 10000:
                 break
             else:
-                print(" Antall må være mellom 0 og 10000.")
+                print("Antall må være mellom 0 og 10000.")
         except ValueError:
             print(" Du må skrive et helt tall.")
 
@@ -220,9 +220,9 @@ def slettVare():
 
     for vare in data:
         if vare["varenummer"] == varenummer:
-            print(f"\n Du er i ferd med å slette: {vare['navn']} (#{vare['varenummer']})")
+            print(f"\nDu er i ferd med å slette: {vare['navn']} (#{vare['varenummer']})")
             bekreft = input("Er du sikker? (J/N): ").strip().lower()
-            if bekreft == "j" or bekreft == "ja":
+            if bekreft == "j" or bekreft == "ja" or bekreft == "j":
                 data.remove(vare)
                 write_data(data)
                 print(" Varen ble slettet fra lageret.")
@@ -236,9 +236,7 @@ def slettVare():
     printMeny()
 
 
-
-
-
+# Når programmet startes kjører menyen
 if __name__ == "__main__":
     printMeny()
 
