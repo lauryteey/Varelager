@@ -28,10 +28,11 @@ def printMeny():
     print("| 1. Registrer nye varer                              |")
     print("| 2. Vise antall varer på din lager                   |")
     print("| 3. søke etter varer                                 |")
-    print("| 4. Oppdater antall varer ved inn -og utlevering     |")
-    print("| 5. Rapport over lagerstatus                         |")
-    print("| 6. Slett en vare                                    |")
-    print("| 7. Slutt                                            |")
+    print("| 4. Vis en kategori                                  |")
+    print("| 5. Oppdater antall varer ved inn -og utlevering     |")
+    print("| 6. Rapport over lagerstatus                         |")
+    print("| 7. Slett en vare                                    |")
+    print("| 8. Slutt                                            |")
     print("------------------------------------------------------")
     menyvalg = input("Vennligst skriv inn tall for å velge fra menyen: ")
     utfoerMenyvalg(menyvalg)
@@ -45,12 +46,14 @@ def utfoerMenyvalg(valgtTall):
     elif valgtTall == "3":
         søkVarer() 
     elif valgtTall == "4":
-        OppdaterVarer()
+        visKategori()
     elif valgtTall == "5":
-        lagerStatus()
+        OppdaterVarer()
     elif valgtTall == "6":
-        slettVare()
+        lagerStatus()
     elif valgtTall == "7":
+        slettVare()
+    elif valgtTall == "8":
         bekreftelse = input("Er du sikker på at du vil avslutte? J/N ")
         if (bekreftelse == "J" or bekreftelse == "j" or bekreftelse == "ja"):
             exit()
@@ -120,14 +123,17 @@ def registrerVarer():
     input("\nTrykk Enter for å fortsette...")
     printMeny()
 
-    
+
+#Viser antall varer på lager vedlig 
 def antallVarer():
     data = last_data()
     print("Antall varer på lager:")
     for vare in data:
         print(f"- {vare['navn']}: {vare['antall']} stk")
     input("\nTrykk Enter for å fortsette...")
-        
+    
+
+#Søke en vare basert på kategori 
 def søkVarer():
     data = last_data()
     søk = input("Skriv inn varenavn eller varenummer: ").strip().lower()
@@ -152,8 +158,34 @@ def søkVarer():
         print("Fant ingen vare som matcher søket.")
     input("\nTrykk Enter for å fortsette...")
     printMeny()
-
     
+#Søke etter en bestem kategori 
+def visKategori():
+    data = last_data()
+
+    if not data:
+        print("Lageret er tomt.")
+        input("\nTrykk Enter for å fortsette...")
+        printMeny()
+        return
+
+    kategori_input = input("Skriv inn navnet på kategorien du vil se: ").strip().lower()
+    funnet = False
+
+    print(f"\nVarer i kategorien '{kategori_input}':")
+    for vare in data:
+        if vare["kategori"].lower() == kategori_input:
+            print(f"- {vare['navn']} (#{vare['varenummer']}), Antall: {vare['antall']}, Pris: {vare['pris']} kr")
+            funnet = True
+
+    if not funnet:
+        print("Fant ingen varer i den kategorien.")
+
+    input("\nTrykk Enter for å fortsette...")
+    printMeny()
+
+
+#Lar deg oppdatere antall varer du kan legge til eller fjerne varer   
 def OppdaterVarer():
     data = last_data()
     
@@ -195,7 +227,7 @@ def OppdaterVarer():
     input("\nTrykk Enter for å fortsette...")
     printMeny()
 
-    
+#Viser en oversikt over varene i lager systemet  
 def lagerStatus():
     data = last_data()
     print("\n--- Lagerstatus ---")
